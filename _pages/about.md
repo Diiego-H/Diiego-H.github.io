@@ -2,29 +2,28 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD Student @ CVC (LAMP team)
 
 profile:
   align: right
   image: diego.jfif
   image_circular: true # crops the image to make it circular
+  more_info: >
+    <p>Barcelona, Spain</p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
-  enabled: true # includes a list of news items
+  enabled: false # includes a list of news items
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: false
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I am a doctoral researcher in the [Learning and Machine Perception (LAMP)](http://lamp.cvc.uab.es/) group at the [Computer Vision Center (CVC)](https://www.cvc.uab.es/), Barcelona. supervised by [Joost van de Weijer](https://scholar.google.com/citations?user=Gsw2iUEAAAAJ&hl=en). Currently, I am working on generative models.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+My background lies at the intersection of mathematics and computing: I hold a double Bachelor's degree [Mathematics and Computer Science](https://web.ub.edu/en/web/facultat-matematiques-informatica/w/infograu-bachelordegree-g1166) from [Universitat de Barcelona](https://www.ub.edu/) in 2025, and a Master’s in [Computer Vision](https://mcv.uab.cat/) from [Universitat Autònoma de Barcelona](https://www.uab.cat/) in 2026.
