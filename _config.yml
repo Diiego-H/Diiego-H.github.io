@@ -21,7 +21,7 @@ baseurl:
 last_updated: true # set to true if you want to display last updated in the footer
 back_to_top: true # set to false to disable the back to top button
 
-keywords: Generative Models, 3D Humans
+keywords: Generative Models, Virtual Humans
 
 # Bold name in the publication list
 scholar:
