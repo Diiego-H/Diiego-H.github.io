@@ -1,22 +1,8 @@
 /* Site-specific tweaks (loaded from _pages/about.md and _pages/publications.md). */
 
-/* Publication entries (desktop): wider image column, tag + image and text centred vertically. */
-@media (min-width: 768px) {
-  .publications .row:has(> .abbr) {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
-  .publications .row > .abbr {
-    flex: 0 0 40%;
-    max-width: 40%;
-    padding-right: 1.5rem;
-  }
-  .publications .row:has(> .abbr) > :not(.abbr) {
-    flex: 1 1 0;
-    width: auto;
-    max-width: none;
-  }
+/* Publication entries: keep the original column widths, but centre the tag + image vertically against the text. */
+.publications .row:has(> .abbr) {
+  align-items: center;
 }
 
 /* Publication thumbnails: show the whole figure, scaled to the column width (no cropping). */
