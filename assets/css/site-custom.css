@@ -1,6 +1,6 @@
 /* Site-specific tweaks (loaded from _pages/about.md and _pages/publications.md). */
 
-/* Publication thumbnails: uniform 4:3 boxes that scale with the column (the images are pre-cropped to ~4:3). */
+/* Publication thumbnails: show the whole figure, scaled to the column width (no cropping). */
 .publications .preview {
   width: 100%;
 }
@@ -8,15 +8,13 @@
 .publications .preview picture {
   display: block;
   width: 100%;
+  height: auto;
 }
 .publications .preview img {
-  aspect-ratio: 4 / 3;
-  height: auto;
-  object-fit: cover;
+  object-fit: contain;
   background: #fff;
   border: 1px solid rgba(128, 128, 128, 0.25);
   border-radius: 6px;
-  padding: 0;
 }
 
 /* Publication buttons (ABS, ARXIV, BIB, WEBSITE, ...) in capitals. */
