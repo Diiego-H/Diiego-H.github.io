@@ -1,5 +1,24 @@
 /* Site-specific tweaks (loaded from _pages/about.md and _pages/publications.md). */
 
+/* Publication entries (desktop): wider image column, tag + image and text centred vertically. */
+@media (min-width: 768px) {
+  .publications .row:has(> .abbr) {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  .publications .row > .abbr {
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding-right: 1.5rem;
+  }
+  .publications .row:has(> .abbr) > :not(.abbr) {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+  }
+}
+
 /* Publication thumbnails: show the whole figure, scaled to the column width (no cropping). */
 .publications .preview {
   width: 100%;
@@ -15,6 +34,14 @@
   background: #fff;
   border: 1px solid rgba(128, 128, 128, 0.25);
   border-radius: 6px;
+}
+
+/* Click-to-zoom: draw the enlarged image (and its backdrop) above the fixed navbar so it is never cut off. */
+.medium-zoom-overlay {
+  z-index: 10000 !important;
+}
+.medium-zoom-image--opened {
+  z-index: 10001 !important;
 }
 
 /* Publication buttons (ABS, ARXIV, BIB, WEBSITE, ...) in capitals. */
