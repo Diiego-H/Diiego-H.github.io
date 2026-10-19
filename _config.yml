@@ -23,11 +23,6 @@ back_to_top: true # set to false to disable the back to top button
 
 keywords: Generative Models, Virtual Humans
 
-# Bold name in the publication list
-scholar:
-  last_name: [Hernández]
-  first_name: [Diego, D.]
-
 # -----------------------------------------------------------------------------
 # Theme
 # -----------------------------------------------------------------------------
@@ -100,7 +95,7 @@ al_folio:
 
 navbar_fixed: true
 footer_fixed: true
-search_enabled: true
+search_enabled: false
 socials_in_search: true
 posts_in_search: true
 bib_search: true
@@ -359,8 +354,8 @@ display_categories: ["external-services"] # these categories will be displayed o
 # -----------------------------------------------------------------------------
 
 scholar:
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: [Hernández]
+  first_name: [Diego, D.]
 
   style: apa
   locale: en
