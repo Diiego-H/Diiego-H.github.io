@@ -1,8 +1,10 @@
 /* Site-specific tweaks (loaded from _pages/about.md and _pages/publications.md). */
 
-/* Publication entries: keep the original column widths, but centre the tag + image vertically against the text. */
-.publications .row:has(> .abbr) {
-  align-items: center;
+/* Publication entries: tag + thumbnail are centred together, vertically, on the whole entry (title -> buttons). */
+.publications .row:has(> .abbr) > .abbr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Publication thumbnails: show the whole figure, scaled to the column width (no cropping). */

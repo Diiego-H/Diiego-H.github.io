@@ -1,6 +1,7 @@
 ---
 layout: about
 title: About
+subtitle: PhD Candidate @ CVC
 permalink: /
 
 profile:
