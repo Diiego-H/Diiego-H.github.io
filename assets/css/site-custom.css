@@ -1,23 +1,60 @@
 /* Site-specific tweaks (loaded from _pages/about.md and _pages/publications.md). */
 
-/* Publication entries: tag + thumbnail are centred together, vertically, on the whole entry (title -> buttons). */
-.publications .row:has(> .abbr) > .abbr {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* Publication entries (desktop): the tag + thumbnail form one group that is centred vertically on the entry
+   (title -> buttons) and can never be taller than the shortest possible entry, which is 4 lines:
+   title (1.5rem) + authors (1.5rem) + venue (1.5rem) + buttons (~2.33rem) = 6.8rem. */
+@media (min-width: 768px) {
+  .publications .row:has(> .abbr) > .abbr {
+    --pub-min-h: 6.8rem;
+    --pub-tag-h: 1.6rem;
+    --pub-gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    flex: 0 0 25%;
+    width: 25%;
+    max-width: 25%;
+    max-height: var(--pub-min-h);
+    margin: 0 0 2px; /* the 2px = hidden-abstract block under the buttons, so we centre on title -> buttons */
+  }
+  .publications .abbr figure {
+    margin: var(--pub-gap) 0 0;
+    text-align: center;
+    line-height: 0; /* no baseline gap under the inline image */
+  }
+  .publications .abbr img.preview {
+    width: auto;
+    max-width: 100%;
+    max-height: calc(var(--pub-min-h) - var(--pub-tag-h) - var(--pub-gap));
+    margin-inline: auto;
+  }
 }
 
-/* Publication thumbnails: show the whole figure, scaled to the column width (no cropping). */
-.publications .preview {
-  width: 100%;
+/* Category tag: larger, and white text so it stays readable in both light and dark mode. */
+.publications .abbr abbr,
+.publications .abbr abbr * {
+  color: #fff !important;
 }
-.publications .preview img,
-.publications .preview picture {
+.publications .abbr abbr {
+  font-size: 0.9rem;
+  padding: 0.35rem 0.5rem;
+  margin: 0 !important;
+}
+
+/* Year headings: keep them readable in light mode. */
+.publications h2.bibliography {
+  color: var(--global-text-color-light, #828282) !important;
+}
+
+/* Publication thumbnails: show the whole figure (never cropped). */
+.publications .abbr figure,
+.publications .abbr picture {
   display: block;
-  width: 100%;
-  height: auto;
 }
-.publications .preview img {
+.publications .abbr img.preview {
+  display: block;
+  height: auto;
   object-fit: contain;
   background: #fff;
   border: 1px solid rgba(128, 128, 128, 0.25);
@@ -37,4 +74,31 @@
 .publications .links .btn,
 .publications .btn {
   text-transform: uppercase;
+}
+
+/* Full-size viewer opened from a cropped thumbnail (see assets/js/preview-full.js). */
+.preview-full-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2vh 2vw;
+  cursor: zoom-out;
+}
+.preview-full-bg {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--global-bg-color, #fff) 93%, transparent);
+}
+.preview-full-overlay img {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35);
 }
