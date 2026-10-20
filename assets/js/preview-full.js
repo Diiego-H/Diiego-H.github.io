@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var ty = T.top - F.top - s * reg[1] * F.height;
     return {
       transform: "translate(" + tx + "px," + ty + "px) scale(" + s + ")",
-      clipPath:
-        "inset(" + reg[1] * 100 + "% " + (1 - reg[2]) * 100 + "% " + (1 - reg[3]) * 100 + "% " + reg[0] * 100 + "%)",
+      clipPath: "inset(" + reg[1] * 100 + "% " + (1 - reg[2]) * 100 + "% " + (1 - reg[3]) * 100 + "% " + reg[0] * 100 + "%)",
     };
   }
 
@@ -76,20 +75,22 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.appendChild(overlay);
     current = { overlay: overlay, bg: bg, img: img, thumb: thumb };
     img.src = src;
-    (img.decode ? img.decode() : Promise.resolve()).catch(function () {}).then(function () {
-      if (current === null || current.img !== img) return;
-      var from = startState(thumb, img);
-      thumb.style.visibility = "hidden";
-      var opts = { duration: DURATION, easing: EASING };
-      bg.animate({ opacity: [0, 1] }, opts);
-      img.animate(
-        [
-          { transform: from.transform, clipPath: from.clipPath },
-          { transform: "none", clipPath: "inset(0% 0% 0% 0%)" },
-        ],
-        opts
-      );
-    });
+    (img.decode ? img.decode() : Promise.resolve())
+      .catch(function () {})
+      .then(function () {
+        if (current === null || current.img !== img) return;
+        var from = startState(thumb, img);
+        thumb.style.visibility = "hidden";
+        var opts = { duration: DURATION, easing: EASING };
+        bg.animate({ opacity: [0, 1] }, opts);
+        img.animate(
+          [
+            { transform: from.transform, clipPath: from.clipPath },
+            { transform: "none", clipPath: "inset(0% 0% 0% 0%)" },
+          ],
+          opts
+        );
+      });
   }
 
   document.addEventListener("keydown", function (e) {
